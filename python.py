@@ -11,7 +11,7 @@ while 1:
     img = camera.read()[1]
     orig = img.copy()
     img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-    mask = cv2.inRange(img, lower_blue, upper_blue)
+    mask = cv2.inRange(img, lower_blue, upper_blue)  #for masking Blue Objects in the frame
     edged = cv2.Canny(mask, 50, 100)
     cnt = cv2.findContours(edged, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[1]
     if len(cnt)>0:
