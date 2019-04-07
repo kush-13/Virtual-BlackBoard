@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 
-camera = cv2.VideoCapture('https://192.168.0.10:8080/video')
+camera = cv2.VideoCapture(0)
 lower_blue = np.array([110-10, 50, 50])
 upper_blue = np.array([130, 255, 255])
 (h,w,c)=camera.read()[1].shape
