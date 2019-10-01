@@ -45,7 +45,6 @@ ret, image = camera.read()
 
 while ret:
     frame = cv2.resize(image, (500, 500))
-    # print(frame.shape)
     if initBB is not None:
         (success, box) = tracker.update(frame)
         if success:
